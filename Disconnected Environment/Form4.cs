@@ -195,12 +195,24 @@ namespace Disconnected_Environment
             cbNama();
             clearBtn.Enabled = true;
             saveBtn.Enabled = true;
-            addBtn.Enabled = true;
+            addBtn.Enabled = false;
         }
 
         private void btnClear(object sender, EventArgs e)
         {
             refreshform();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form1 fm = new Form1();
+            fm.Show();
+            this.Hide();
+        }
+
+        private void txtNIM_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

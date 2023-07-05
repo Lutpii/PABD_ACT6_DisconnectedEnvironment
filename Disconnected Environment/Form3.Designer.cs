@@ -42,6 +42,8 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.mahasiswaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pabdAct6DataSet = new Disconnected_Environment.PabdAct6DataSet();
             this.cbxProdi = new System.Windows.Forms.ComboBox();
             this.dtTanggalLahir = new System.Windows.Forms.DateTimePicker();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -58,22 +60,21 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.pabdAct6DataSet = new Disconnected_Environment.PabdAct6DataSet();
-            this.mahasiswaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mahasiswaTableAdapter = new Disconnected_Environment.PabdAct6DataSetTableAdapters.mahasiswaTableAdapter();
             this.mahasiswaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pabdAct6DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mahasiswaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pabdAct6DataSet)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mahasiswaBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // bindingNavigator1
             // 
             this.bindingNavigator1.AddNewItem = this.bindingNavigatorAddNewItem;
-            this.bindingNavigator1.BindingSource = this.mahasiswaBindingSource;
             this.bindingNavigator1.CountItem = this.bindingNavigatorCountItem;
             this.bindingNavigator1.DeleteItem = this.bindingNavigatorDeleteItem;
             this.bindingNavigator1.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -97,7 +98,7 @@
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
             this.bindingNavigator1.Size = new System.Drawing.Size(800, 27);
-            this.bindingNavigator1.TabIndex = 0;
+            this.bindingNavigator1.TabIndex = 13;
             this.bindingNavigator1.Text = "bindingNavigator1";
             this.bindingNavigator1.RefreshItems += new System.EventHandler(this.bindingNavigator1_RefreshItems);
             // 
@@ -187,6 +188,16 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
             // 
+            // mahasiswaBindingSource
+            // 
+            this.mahasiswaBindingSource.DataMember = "mahasiswa";
+            this.mahasiswaBindingSource.DataSource = this.pabdAct6DataSet;
+            // 
+            // pabdAct6DataSet
+            // 
+            this.pabdAct6DataSet.DataSetName = "PabdAct6DataSet";
+            this.pabdAct6DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // cbxProdi
             // 
             this.cbxProdi.FormattingEnabled = true;
@@ -194,6 +205,7 @@
             this.cbxProdi.Name = "cbxProdi";
             this.cbxProdi.Size = new System.Drawing.Size(121, 24);
             this.cbxProdi.TabIndex = 1;
+            this.cbxProdi.SelectedIndexChanged += new System.EventHandler(this.cbxProdi_SelectedIndexChanged);
             // 
             // dtTanggalLahir
             // 
@@ -201,6 +213,7 @@
             this.dtTanggalLahir.Name = "dtTanggalLahir";
             this.dtTanggalLahir.Size = new System.Drawing.Size(200, 22);
             this.dtTanggalLahir.TabIndex = 2;
+            this.dtTanggalLahir.ValueChanged += new System.EventHandler(this.dtTanggalLahir_ValueChanged);
             // 
             // btnAdd
             // 
@@ -238,6 +251,7 @@
             this.txtAlamat.Name = "txtAlamat";
             this.txtAlamat.Size = new System.Drawing.Size(100, 22);
             this.txtAlamat.TabIndex = 6;
+            this.txtAlamat.TextChanged += new System.EventHandler(this.txtAlamat_TextChanged);
             // 
             // txtNama
             // 
@@ -252,10 +266,14 @@
             this.txtNIM.Name = "txtNIM";
             this.txtNIM.Size = new System.Drawing.Size(100, 22);
             this.txtNIM.TabIndex = 8;
+            this.txtNIM.TextChanged += new System.EventHandler(this.txtNIM_TextChanged);
             // 
             // cbxJenisKelamin
             // 
             this.cbxJenisKelamin.FormattingEnabled = true;
+            this.cbxJenisKelamin.Items.AddRange(new object[] {
+            "L",
+            "P"});
             this.cbxJenisKelamin.Location = new System.Drawing.Point(127, 73);
             this.cbxJenisKelamin.Name = "cbxJenisKelamin";
             this.cbxJenisKelamin.Size = new System.Drawing.Size(121, 24);
@@ -339,16 +357,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(359, 197);
             this.tableLayoutPanel1.TabIndex = 16;
             // 
-            // pabdAct6DataSet
-            // 
-            this.pabdAct6DataSet.DataSetName = "PabdAct6DataSet";
-            this.pabdAct6DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // mahasiswaBindingSource
-            // 
-            this.mahasiswaBindingSource.DataMember = "mahasiswa";
-            this.mahasiswaBindingSource.DataSource = this.pabdAct6DataSet;
-            // 
             // mahasiswaTableAdapter
             // 
             this.mahasiswaTableAdapter.ClearBeforeFill = true;
@@ -358,11 +366,33 @@
             this.mahasiswaBindingSource1.DataMember = "mahasiswa";
             this.mahasiswaBindingSource1.DataSource = this.pabdAct6DataSet;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(12, 415);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 17;
+            this.button1.Text = "Back";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(12, 386);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 18;
+            this.button2.Text = "Back";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -381,10 +411,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.mahasiswaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pabdAct6DataSet)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pabdAct6DataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mahasiswaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mahasiswaBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -425,5 +455,7 @@
         private System.Windows.Forms.BindingSource mahasiswaBindingSource;
         private PabdAct6DataSetTableAdapters.mahasiswaTableAdapter mahasiswaTableAdapter;
         private System.Windows.Forms.BindingSource mahasiswaBindingSource1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

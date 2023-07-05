@@ -118,6 +118,38 @@ namespace Disconnected_Environment
 
         }
 
+        private void txtNIM_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbxProdi_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtAlamat_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtTanggalLahir_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form1 fm = new Form1();
+            fm.Show();
+            this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
+        }
+
         private void label1_Click(object sender, EventArgs e)
         {
 

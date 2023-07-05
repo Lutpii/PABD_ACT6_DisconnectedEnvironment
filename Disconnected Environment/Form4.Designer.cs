@@ -41,6 +41,7 @@
             this.addBtn = new System.Windows.Forms.Button();
             this.clearBtn = new System.Windows.Forms.Button();
             this.saveBtn = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -126,6 +127,7 @@
             this.txtNIM.Size = new System.Drawing.Size(43, 16);
             this.txtNIM.TabIndex = 8;
             this.txtNIM.Text = "txtNIM";
+            this.txtNIM.Click += new System.EventHandler(this.txtNIM_Click);
             // 
             // openBtn
             // 
@@ -167,11 +169,22 @@
             this.saveBtn.UseVisualStyleBackColor = true;
             this.saveBtn.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(13, 415);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "Back";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.saveBtn);
             this.Controls.Add(this.clearBtn);
             this.Controls.Add(this.addBtn);
@@ -210,5 +223,6 @@
         private System.Windows.Forms.Button addBtn;
         private System.Windows.Forms.Button clearBtn;
         private System.Windows.Forms.Button saveBtn;
+        private System.Windows.Forms.Button button1;
     }
 }

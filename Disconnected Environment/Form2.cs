@@ -46,7 +46,7 @@ namespace Disconnected_Environment
         private void dataGridView()
         {
             koneksi.Open();
-            string str = "select nama_prodi from dbo.prodi";
+            string str = "select id_prodi, nama_prodi from dbo.prodi";
             SqlDataAdapter da = new SqlDataAdapter(str, koneksi);
             DataSet ds = new DataSet();
             da.Fill(ds);
@@ -69,8 +69,8 @@ namespace Disconnected_Environment
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            string nmProdi = nmp.Text;
-            string idProdi = idp.Text;
+            string nmProdi = nmp.Text.Trim();
+            string idProdi = idp.Text.Trim();
 
             if (nmProdi == "")
             {
@@ -106,6 +106,13 @@ namespace Disconnected_Environment
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form1 fm = new Form1();
+            fm.Show();
+            this.Hide();
         }
     }
 }
